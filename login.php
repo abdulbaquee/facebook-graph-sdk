@@ -10,9 +10,11 @@ $client_secret = 'your_app_secret';
 
 $callback_uri = 'your_call_back_url';
 
+$graph_version = 'v20.0'; // optional
+
 $permissions = ['email', 'public_profile'];
 
-$oauth = new OAuth($client_id, $client_secret, $callback_uri);
+$oauth = new OAuth($client_id, $client_secret, $callback_uri, $graph_version);
 
 // Step 1: Redirect user to Facebook login URL
 $loginUrl = $oauth->getLoginUrl($permissions);

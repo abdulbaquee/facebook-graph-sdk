@@ -25,6 +25,7 @@ class OAuth
     protected $clientId;
     protected $clientSecret;
     protected $redirectUri;
+    protected $graphVersion;
     protected $client;
 
     /**
@@ -34,11 +35,12 @@ class OAuth
      * @param string $clientSecret
      * @param string $redirectUri
      */
-    public function __construct($clientId, $clientSecret, $redirectUri)
+    public function __construct($clientId, $clientSecret, $redirectUri, $graphVersion = null)
     {
         $this->clientId = $clientId;
         $this->clientSecret = $clientSecret;
         $this->redirectUri = $redirectUri;
+        $this->graphVersion = $graphVersion ?? static::DEFAULT_GRAPH_VERSION;
         $this->client = new Client([
             'base_uri' => static::BASE_GRAPH_URL,
             'timeout'  => 10.0,
@@ -62,7 +64,7 @@ class OAuth
             'state' => $state,
         ];
 
-        return static::BASE_AUTHORIZATION_URL . '/' . static::DEFAULT_GRAPH_VERSION . '/dialog/oauth?' . http_build_query($params);
+        return static::BASE_AUTHORIZATION_URL . '/' . $this->graphVersion . '/dialog/oauth?' . http_build_query($params);
     }
 
     /**
@@ -82,7 +84,7 @@ class OAuth
         ];
 
         try {
-            $response = $this->client->request('GET', static::DEFAULT_GRAPH_VERSION . '/oauth/access_token', [
+            $response = $this->client->request('GET', $this->graphVersion . '/oauth/access_token', [
                 'query' => $params,
             ]);
 
@@ -115,7 +117,7 @@ class OAuth
         ];
 
         try {
-            $response = $this->client->request('GET', static::DEFAULT_GRAPH_VERSION . '/oauth/access_token', [
+            $response = $this->client->request('GET', $this->graphVersion . '/oauth/access_token', [
                 'query' => $params,
             ]);
 
