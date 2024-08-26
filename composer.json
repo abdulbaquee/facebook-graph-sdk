@@ -1,0 +1,32 @@
+{
+  "name": "abdulbaquee/facebook-graph-sdk",
+  "description": "A PHP SDK to easily interact with the Facebook Graph API.",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Abdul Baquee",
+      "email": "abdulbaquee@gmail.com",
+      "homepage": "https://webgrapple.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Facebook\\GraphSDK\\": "src/Facebook/GraphSDK/"
+    }
+  },
+  "require": {
+    "php": ">=7.4",
+    "guzzlehttp/guzzle": "^7.0",
+    "ext-json": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.5",
+    "mockery/mockery": "^1.4"
+  },
+  "scripts": {
+    "test": "phpunit"
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}

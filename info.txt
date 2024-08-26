@@ -1,0 +1,14 @@
+$client_id = '247613388656901';
+
+$client_secret = '57342a884f88757dcd241a1943675471';
+
+$callback_uri = 'https://ebrandz.me/facebook/callback';
+
+$permissions = ['email', 'pages_show_list', 'pages_manage_engagement', 'pages_manage_metadata', 'pages_read_user_content', 'pages_read_engagement', 'read_insights', 'pages_manage_ads', 'leads_retrieval', 'business_management'];
+
+$accessToken = 'EAADhMZCwSkQUBO0MtZAHZBZARV90R89641ZBZASzfQUHUFwwTqq4ikjSkef2ZChzmgQZC6oCAtRHavqTJIXxwDOAvfHdNTk3jZBnB4wgDZApyc65sp76vfJ3bh81dgKrQ9xZAQdIAN5gWoIDSfnQpWPvEiBf6NgaAhCECRDXDdbNn6JsZCkp7MpEKpMGCvTW';
+
+
+https://github.com/abdulbaquee/facebook-graph-sdk/blob/main/login.php
+
+/opt/lampp/htdocs/facebook-graph-sdk-test/facebook-graph-sdk/user.php
